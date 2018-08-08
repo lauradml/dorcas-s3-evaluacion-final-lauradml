@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
+import CharactersDetail from'./components/CharactersDetail';
 import {Switch, Route} from 'react-router-dom';
 
 const url='http://hp-api.herokuapp.com/api/characters';
@@ -55,7 +56,7 @@ getCharacters() {
           <Route exact path="/" render={ () => <Home characters={this.state.characters} filterMovies={this.filterMovies} name={this.state.name}
           photo={this.state.image} house={this.state.house} filterName={this.filterName}/>} />
 
-          <Route path="/charactersDetail/:id" render={(props) => <charactersDetail match={props.match} characters={this.state.characters} />} />
+          <Route path="/charactersDetail/:id" render={(props) => <CharactersDetail match={props.match} characters={this.state.characters} />} />
         </Switch>
 
       </div>

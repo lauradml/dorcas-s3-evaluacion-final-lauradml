@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import {Link} from 'react-router-dom';
 
 class List extends React.Component {
   render(){
@@ -10,10 +11,12 @@ class List extends React.Component {
         .filter(item => {
               return item.name.toLowerCase().includes(this.props.filterName);
             })
-        .map((item, index)=>{
+        .map(item=>{
             return (
-              <li className="app__item" key={index}>
-                <Card item={item}/>
+              <li className="app-item" key={item.id}>
+                <Link to={`/charactersDetail/${item.id}`} >
+                  <Card item={item}/>
+                </Link>
               </li>
             );
           })}
