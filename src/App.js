@@ -33,8 +33,17 @@ getCharacters() {
   fetch(url)
     .then(response => response.json())
     .then(data => {
+      const result = data;
+         let resultId = [];
+
+         for (let i=0; i<result.length; i++) {
+           resultId[i] = {
+             ...result[i],
+             id: i
+}
+}
       this.setState({
-      characters: data
+      characters: resultId
       });
     });
 }
