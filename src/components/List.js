@@ -5,7 +5,11 @@ class List extends React.Component {
     return (
       <ul className="app__list">
 
-      {this.props.characters.map((item, index)=>{
+      {this.props.characters
+        .filter(item => {
+              return item.name.toLowerCase().includes(this.props.filterName);
+            })
+        .map((item, index)=>{
             return (
               <li className="app__item" key={index}>
                 <img src={item.image} alt=""/>

@@ -8,6 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.filterName = this.filterName.bind(this);
+
     this.state = {
       characters: [],
       name:'',
@@ -16,11 +18,17 @@ class App extends Component {
     }
 
   }
+  filterName(e) {
+    const resultado = e.currentTarget.value.toLowerCase();
+    this.setState({
+      name: resultado
+    });
+  }
 
   componentDidMount() {
-  this.getcharacters();
+  this.getCharacters();
 }
-getcharacters() {
+getCharacters() {
   fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -33,7 +41,8 @@ getcharacters() {
   render() {
     return (
       <div className="App">
-        <Home characters={this.state.characters}name={this.state.name} photo={this.state.image} house={this.state.house}/>
+        <Home characters={this.state.characters} filterMovies={this.filterMovies} name={this.state.name}
+        photo={this.state.image} house={this.state.house} filterName={this.filterName}/>
       </div>
     );
   }
