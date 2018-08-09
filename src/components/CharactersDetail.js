@@ -7,7 +7,7 @@ class CharactersDetail extends React.Component {
     if (this.props.characters[this.props.match.params.id].alive === true) {
       status = 'vivo';
     } else {
-      status = 'muerto';
+      status = 'muerto 🧟';
     }
     if (this.props.characters.length === 0) {
       return null;
