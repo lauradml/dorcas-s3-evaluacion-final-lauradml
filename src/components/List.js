@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 class List extends React.Component {
   render(){
     return (
-      <ul className="app__list">
+      <ul className="app-list">
 
       {this.props.characters
         .filter(item => {
@@ -13,7 +13,7 @@ class List extends React.Component {
             })
         .map(item=>{
             return (
-              <li className="app-item" key={item.id}>
+              <li className='app-item' key={item.id}>
                 <Link to={`/charactersDetail/${item.id}`} >
                   <Card item={item}/>
                 </Link>
