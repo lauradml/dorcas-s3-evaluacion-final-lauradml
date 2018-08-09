@@ -1,8 +1,12 @@
 .App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
 }
 .title{
-  text-align: certer
+  text-align: certer;
 
 }
 .app-list{
@@ -15,7 +19,7 @@
   margin-right: 100px;
 }
 .app-item{
-  height: 380px;
+  height: 450px;
   background-color:#f57738;
   border: 1px solid black;
   text-align: center;
@@ -23,11 +27,14 @@
 
 }
 .container-imagen{
-  max-height: 250px;
-  overflow: hidden;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
 .imagen-card{
-  width: 100%;
+  width: 0px;
+  height: 0px;
 }
 .descrption-card{
   color: white;
@@ -36,7 +43,46 @@
 a{
   text-decoration: none;
 }
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.description {
+  text-decoration: none;
+  color:#ffffff;
+}
+.container-detail{
+  padding-top: 100px;
+}
+.app-item-detail{
+  display: grid;
+  grid-template-columns:250px 1fr;
+  height: 350px;
+  width: 600px;
+  background-color:#f57738;
+  border: 1px solid black;
+
+}
+.container-imagen-detail{
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+
+}
+.imagen-detail{
+  width: 0px;
+  height: 0px;
+}
+.description-detail{
+  text-align: left;
+  color:#ffffff;
+  padding-left: 45px;
+
+}
+.title-detail{
+  text-align: center;
+  padding-bottom: 50px;
+}
+.back-btn{
+  color:#ffffff;
+  border-style: double;
+  border-radius: 5xp;
+  padding: 5px 10px 5px 10px ;
 }
