@@ -13,8 +13,20 @@ class CharactersDetail extends React.Component {
     if (this.props.characters.length === 0) {
       return null;
     }
+
     if(this.props.characters[this.props.match.params.id].house === 'Slytherin'){
       casa = 'Slytherin 🐍';
+    }
+    else if(this.props.characters[this.props.match.params.id].house === 'Gryffindor'){
+        casa = 'Gryffindor 🦁';
+    }
+    else if(this.props.characters[this.props.match.params.id].house === 'Ravenclaw'){
+        casa = 'Ravenclaw 🦅';
+    }
+    else if(this.props.characters[this.props.match.params.id].house === 'Hufflepuff'){
+        casa = 'Hufflepuff 🐿 ';
+    }else{
+      casa='no tiene casa 🤷'
     }
 
       return (
