@@ -4,7 +4,7 @@ import Home from './components/Home';
 import CharactersDetail from'./components/CharactersDetail';
 import {Switch, Route} from 'react-router-dom';
 
-const url='http://hp-api.herokuapp.com/api/characters';
+const url='https://hp-api.herokuapp.com/api/characters';
 
 class App extends Component {
   constructor(props) {
