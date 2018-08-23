@@ -5,7 +5,9 @@ let status='';
 let casa='';
 class CharactersDetail extends React.Component {
   render(){
-    if (this.props.characters[this.props.match.params.id].alive === true) {
+
+  const {image, name, yearOfBirth, patronus, alive , house} = this.props.characters[this.props.match.params.id];
+    if (alive === true) {
       status = 'vivo';
     } else {
       status = 'muerto 🧟';
@@ -14,16 +16,16 @@ class CharactersDetail extends React.Component {
       return null;
     }
 
-    if(this.props.characters[this.props.match.params.id].house === 'Slytherin'){
+    if(house === 'Slytherin'){
       casa = 'Slytherin 🐍';
     }
-    else if(this.props.characters[this.props.match.params.id].house === 'Gryffindor'){
+    else if(house === 'Gryffindor'){
         casa = 'Gryffindor 🦁';
     }
-    else if(this.props.characters[this.props.match.params.id].house === 'Ravenclaw'){
+    else if(house === 'Ravenclaw'){
         casa = 'Ravenclaw 🦅';
     }
-    else if(this.props.characters[this.props.match.params.id].house === 'Hufflepuff'){
+    else if(house === 'Hufflepuff'){
         casa = 'Hufflepuff 🐿 ';
     }else{
       casa='no tiene casa 🤷'
@@ -32,14 +34,14 @@ class CharactersDetail extends React.Component {
       return (
         <div className='container-detail'>
           <div className='app-item-detail'>
-            <div className='container-imagen-detail'style={{backgroundImage:'url(' + this.props.characters[this.props.match.params.id].image + ')'}}>
-              <img className='imagen-detail' src={this.props.characters[this.props.match.params.id].image}alt=""/>
+            <div className='container-imagen-detail'style={{backgroundImage:'url(' + image + ')'}}>
+              <img className='imagen-detail' src={image}alt=""/>
               </div>
             <div className='description-detail'>
-              <h2 className='title-detail'>{this.props.characters[this.props.match.params.id].name}</h2>
+              <h2 className='title-detail'>{name}</h2>
               <p>Casa:{casa}</p>
-              <p>Nacimiento:{this.props.characters[this.props.match.params.id].yearOfBirth}</p>
-              <p>Patronuis:{this.props.characters[this.props.match.params.id].patronus}</p>
+              <p>Nacimiento:{yearOfBirth}</p>
+              <p>Patronuis:{patronus}</p>
               <p>estado:{status} </p>
               <Link to="/" className="back-btn"> Volver </Link>
             </div>

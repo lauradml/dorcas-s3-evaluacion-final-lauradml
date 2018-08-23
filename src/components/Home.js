@@ -10,8 +10,13 @@ class Home extends React.Component {
             <h1 className='title'>Harry Potter Characters </h1>
             <Filter filterName={this.props.filterName}/>
           </header>
-          <List characters={this.props.characters}name={this.props.name} photo={this.props.image}
-          house={this.props.house}  filterName={this.props.name}/>
+          <List
+            characters={this.props.characters}
+            name={this.props.name}
+            photo={this.props.image}
+            house={this.props.house}
+            filterName={this.props.name}
+          />
       </React.Fragment>
     );
   }

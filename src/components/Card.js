@@ -2,14 +2,15 @@ import React from 'react';
 
 class Card extends React.Component {
   render(){
+    const{name, house, image}= this.props.item;
     return (
       <div>
-        <div className='container-imagen'style={{backgroundImage:'url(' + this.props.item.image + ')'}}>
-          <img className='imagen-card'src={this.props.item.image} alt={this.props.item.name}/>
+        <div className='container-imagen'style={{backgroundImage:'url(' + image + ')'}}>
+          <img className='imagen-card'src={image} alt={name}/>
         </div>
         <div className='description'>
-          <h2>{this.props.item.name}</h2>
-          <p>{this.props.item.house}</p>
+          <h2>{name}</h2>
+          <p>{house}</p>
         </div>
       </div>
 
